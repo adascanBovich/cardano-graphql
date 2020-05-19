@@ -3,33 +3,34 @@
 { config ? {}
 , sourcesOverride ? {}
 , pkgs ? import ./nix/pkgs.nix {}
-, yarn2nix ? pkgs.yarn2nix-moretea.yarn2nix
 }:
 
 with pkgs;
 let
-  # FIXME: make a Typescript shell
   # This provides a development environment that can be used with nix-shell
   shell = pkgs.mkShell {
-    name = "yarn-dev-shell";
+    name = "cardano-graphql-dev-shell";
 
     # These programs will be available inside the nix-shell.
     buildInputs = [
-      yarn2nix    # Generate nix expressions from a yarn.lock file
-      nix         # Purely Functional Package Manager
-      niv         # Dependency management for Nix projects
-      pkgconfig   # Allows packages to find out information about other packages
-      tmux        # Terminal multiplexer
-      git         # Distributed version control system
-      yarn        # Dependency management for javascript
-      python
-      nodejs
+      git                 # Distributed version control system
+      go                  # The Go Programming language
+      packages.niv        # Dependency management for Nix projects
+      nix                 # Purely Functional Package Manager
+      packages.nodejs     # Event-driven I/O framework for the V8 JavaScript engine
+      pkgconfig           # Allows packages to find out information about other packages
       pkgs.packages.cardano-graphql
       pkgs.packages.persistgraphql
+      pkgs.packages.hasura-cli
+      python              # The Python Programming language
+      tmux                # Terminal multiplexer
+      yarn                # Dependency management for javascript
+      packages.vgo2nix    # Convert go.mod files to nixpkgs buildGoPackage compatible deps.nix files
+      packages.yarn2nix   # Generate nix expressions from a yarn.lock file
     ];
 
     shellHook = ''
-      echo "Typescript Dev Tools" \
+      echo "Cardano Graphql Dev Tools" \
       | ${figlet}/bin/figlet -f banner -c \
       | ${lolcat}/bin/lolcat
 
@@ -37,6 +38,7 @@ let
       echo "Commands:
         * niv update <package> - update package
         * persistgraphql <src> whitelist.json - generates a whitelist.json to limit graphql queries
+        * export GOPATH="\$\(pwd\)/.go" - enable vgo2nix to use the pwd as it's source
 
       "
     '';

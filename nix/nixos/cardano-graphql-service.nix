@@ -74,7 +74,6 @@ in {
     frontend = (import ../../.).cardano-graphql;
     persistgraphql = (import ../../.).persistgraphql;
     hasuraBaseUri = "${cfg.hasuraProtocol}://${cfg.hasuraIp}:${toString cfg.enginePort}";
-    hasuraDbMetadata = ../../hasura/migrations/metadata.json;
   in lib.mkIf cfg.enable {
     systemd.services.cardano-graphql = {
       wantedBy = [ "multi-user.target" ];
@@ -98,7 +97,7 @@ in {
           echo loop $x: waiting for graphql-engine 2 sec...
           sleep 2
         done
-        curl -d'{"type":"replace_metadata", "args":'$(jq -c < ${hasuraDbMetadata})'}' ${hasuraBaseUri}/v1/query
+        # TODO get metadata posted here
       '';
       script = ''
         exec cardano-graphql

@@ -40,6 +40,15 @@ let
         sha1 = "c3b33ab5ee360d86e0e628f0468ae7ef27d654df";
       };
     };
+    "ansi-styles-3.2.1" = {
+      name = "ansi-styles";
+      packageName = "ansi-styles";
+      version = "3.2.1";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz";
+        sha512 = "VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==";
+      };
+    };
     "apollo-client-1.9.3" = {
       name = "apollo-client";
       packageName = "apollo-client";
@@ -58,6 +67,15 @@ let
         sha512 = "OxL0Kjizb0eS2ObldDqJEs/tFN9xI9RZuTJcaszgGy+xudoPXhIMCHMr7hGZhy0mK+U+BbBULZJw4YQU4J0ODQ==";
       };
     };
+    "axios-0.19.2" = {
+      name = "axios";
+      packageName = "axios";
+      version = "0.19.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/axios/-/axios-0.19.2.tgz";
+        sha512 = "fjgm5MvRHLhx+osE2xoekY70AhARk3a6hkN+3Io1jc00jtquGvxYlKlsFUhmUET0V5te6CcZI7lcv2Ym61mjHA==";
+      };
+    };
     "camelcase-3.0.0" = {
       name = "camelcase";
       packageName = "camelcase";
@@ -65,6 +83,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/camelcase/-/camelcase-3.0.0.tgz";
         sha1 = "32fc4b9fcdaf845fcdf7e73bb97cac2261f0ab0a";
+      };
+    };
+    "chalk-2.4.2" = {
+      name = "chalk";
+      packageName = "chalk";
+      version = "2.4.2";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz";
+        sha512 = "Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==";
       };
     };
     "cliui-3.2.0" = {
@@ -85,6 +112,33 @@ let
         sha1 = "0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77";
       };
     };
+    "color-convert-1.9.3" = {
+      name = "color-convert";
+      packageName = "color-convert";
+      version = "1.9.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/color-convert/-/color-convert-1.9.3.tgz";
+        sha512 = "QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==";
+      };
+    };
+    "color-name-1.1.3" = {
+      name = "color-name";
+      packageName = "color-name";
+      version = "1.1.3";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/color-name/-/color-name-1.1.3.tgz";
+        sha1 = "a7d0558bd89c42f795dd42328f740831ca53bc25";
+      };
+    };
+    "debug-3.1.0" = {
+      name = "debug";
+      packageName = "debug";
+      version = "3.1.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/debug/-/debug-3.1.0.tgz";
+        sha512 = "OX8XqP7/1a9cqkxYw2yXss15f26NKWBpDXQd0/uK/KPqdQhxbPa994hnzjcE2VqQpDslf55723cKPUOGSmMY3g==";
+      };
+    };
     "decamelize-1.2.0" = {
       name = "decamelize";
       packageName = "decamelize";
@@ -103,6 +157,15 @@ let
         sha512 = "7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==";
       };
     };
+    "escape-string-regexp-1.0.5" = {
+      name = "escape-string-regexp";
+      packageName = "escape-string-regexp";
+      version = "1.0.5";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz";
+        sha1 = "1b61c0562190a8dff6ae3bb2cf0200ca130b86d4";
+      };
+    };
     "find-up-1.1.2" = {
       name = "find-up";
       packageName = "find-up";
@@ -110,6 +173,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/find-up/-/find-up-1.1.2.tgz";
         sha1 = "6b2e9822b1a2ce0a60ab64d610eccad53cb24d0f";
+      };
+    };
+    "follow-redirects-1.5.10" = {
+      name = "follow-redirects";
+      packageName = "follow-redirects";
+      version = "1.5.10";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/follow-redirects/-/follow-redirects-1.5.10.tgz";
+        sha512 = "0V5l4Cizzvqt5D44aTXbFZz+FtyXV1vrDN6qrelxtfYQKW0KO0W2T/hkE8xvGa/540LkZlkaUjO4ailYTFtHVQ==";
       };
     };
     "get-caller-file-1.0.3" = {
@@ -155,6 +227,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.10.3.tgz";
         sha512 = "4FOv3ZKfA4WdOKJeHdz6B3F/vxBLSgmBcGeAFPf4n1F64ltJUvOOerNj0rsJxONQGdhUMynQIvd6LzB+1J5oKA==";
+      };
+    };
+    "has-flag-3.0.0" = {
+      name = "has-flag";
+      packageName = "has-flag";
+      version = "3.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz";
+        sha1 = "b5d454dc2199ae225699f3467e5a07f3b955bafd";
       };
     };
     "hosted-git-info-2.8.8" = {
@@ -263,6 +344,15 @@ let
       src = fetchurl {
         url = "https://registry.npmjs.org/loose-envify/-/loose-envify-1.4.0.tgz";
         sha512 = "lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==";
+      };
+    };
+    "ms-2.0.0" = {
+      name = "ms";
+      packageName = "ms";
+      version = "2.0.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/ms/-/ms-2.0.0.tgz";
+        sha1 = "5608aeadfc00be6c2901df5f9861788de0d597c8";
       };
     };
     "normalize-package-data-2.5.0" = {
@@ -490,6 +580,15 @@ let
         sha1 = "6219a85616520491f35788bdbf1447a99c7e6b0e";
       };
     };
+    "supports-color-5.5.0" = {
+      name = "supports-color";
+      packageName = "supports-color";
+      version = "5.5.0";
+      src = fetchurl {
+        url = "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz";
+        sha512 = "QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==";
+      };
+    };
     "symbol-observable-1.2.0" = {
       name = "symbol-observable";
       packageName = "symbol-observable";
@@ -654,6 +753,37 @@ in
     meta = {
       description = "A build tool for GraphQL projects.";
       homepage = "https://github.com/Poincare/persistgraphql#readme";
+      license = "MIT";
+    };
+    production = true;
+    bypassCache = true;
+    reconstructLock = true;
+  };
+  hasura-cli = nodeEnv.buildNodePackage {
+    name = "hasura-cli";
+    packageName = "hasura-cli";
+    version = "1.2.1";
+    src = fetchurl {
+      url = "https://registry.npmjs.org/hasura-cli/-/hasura-cli-1.2.1.tgz";
+      sha512 = "kHg3Vl2wKCQQ92EZCHGiXL1gDhjCzsulHzHcVU9Fb4LVgNdXSq1XE8BFrVm9eLeKtYR40BjUYpAZDgAcg0DYHQ==";
+    };
+    dependencies = [
+      sources."ansi-styles-3.2.1"
+      sources."axios-0.19.2"
+      sources."chalk-2.4.2"
+      sources."color-convert-1.9.3"
+      sources."color-name-1.1.3"
+      sources."debug-3.1.0"
+      sources."escape-string-regexp-1.0.5"
+      sources."follow-redirects-1.5.10"
+      sources."has-flag-3.0.0"
+      sources."ms-2.0.0"
+      sources."supports-color-5.5.0"
+    ];
+    buildInputs = globalBuildInputs;
+    meta = {
+      description = "A package that automatically installs and wraps Hasura CLI binary in isolated manner";
+      homepage = https://github.com/jjangga0214/hasura-cli;
       license = "MIT";
     };
     production = true;
