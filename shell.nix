@@ -30,6 +30,7 @@ let
     ];
 
     shellHook = ''
+      source <(hasura completion bash)
       echo "Cardano Graphql Dev Tools" \
       | ${figlet}/bin/figlet -f banner -c \
       | ${lolcat}/bin/lolcat
