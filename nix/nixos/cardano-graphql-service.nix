@@ -92,6 +92,39 @@ in {
     pluginLibPath = pkgs.lib.makeLibraryPath [
       pkgs.stdenv.cc.cc.lib
     ];
+    installHasuraCLI = ''
+      hasura plugins install cli-ext
+      orig_size=$(stat --printf=%s ~/.hasura/plugins/bin/hasura-cli_ext)
+      patchelf --set-interpreter ${pkgs.stdenv.glibc.out}/lib/ld-linux-x86-64.so.2 \
+               --set-rpath "${pluginLibPath}" \
+               ~/.hasura/plugins/bin/hasura-cli_ext
+          new_size=$(stat --printf=%s ~/.hasura/plugins/bin/hasura-cli_ext)
+    ###### zeit-pkg fixing starts here.
+    # we're replacing plaintext js code that looks like
+    # PAYLOAD_POSITION = '1234                  ' | 0
+    # [...]
+    # PRELUDE_POSITION = '1234                  ' | 0
+    # ^-----20-chars-----^^------22-chars------^
+    # ^-- grep points here
+    #
+    # var_* are as described above
+    # shift_by seems to be safe so long as all patchelf adjustments occur
+    # before any locations pointed to by hardcoded offsets
+    var_skip=20
+    var_select=22
+    shift_by=$(expr $new_size - $orig_size)
+    function fix_offset {
+      # $1 = name of variable to adjust
+      location=$(grep -obUam1 "$1" ~/.hasura/plugins/bin/hasura-cli_ext | cut -d: -f1)
+      location=$(expr $location + $var_skip)
+      value=$(dd if=~/.hasura/plugins/bin/hasura-cli_ext iflag=count_bytes,skip_bytes skip=$location \
+                 bs=1 count=$var_select status=none)
+      value=$(expr $shift_by + $value)
+      echo -n $value | dd of=~/.hasura/plugins/bin/hasura-cli_ext bs=1 seek=$location conv=notrunc
+    }
+    fix_offset PAYLOAD_POSITION
+    fix_offset PRELUDE_POSITION
+    '';
   in lib.mkIf cfg.enable {
     systemd.services.cardano-graphql = {
       wantedBy = [ "multi-user.target" ];
@@ -119,10 +152,7 @@ in {
         cp -a ${cfg.projectPath} project
         cp ${hasuraConfigFile} project/config.yaml
         rm -rf ~/.hasura/plugins
-        hasura plugins install cli-ext
-        patchelf --set-interpreter ${pkgs.stdenv.glibc.out}/lib/ld-linux-x86-64.so.2 \
-                 --set-rpath "${pluginLibPath}" \
-                 ~/.hasura/plugins/bin/hasura-cli_ext
+        ${installHasuraCLI}
         hasura --project project migrate apply --down all
         hasura --project project migrate apply --up all
         hasura --project project metadata clear
