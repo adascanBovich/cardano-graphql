@@ -153,7 +153,6 @@ in {
         cp ${hasuraConfigFile} project/config.yaml
         rm -rf ~/.hasura/plugins
         ${installHasuraCLI}
-        log "Applying migrations and metadata"
         hasura --project project migrate apply --down all
         hasura --project project migrate apply --up all
         hasura --project project metadata clear
