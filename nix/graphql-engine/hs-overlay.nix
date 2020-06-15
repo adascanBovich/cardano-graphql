@@ -1,8 +1,8 @@
-{ haskell }:
+{ haskell, sources }:
 
 self: super: {
   ci-info = self.callPackage ./ci-info.nix {};
-  graphql-engine = haskell.lib.dontHaddock (haskell.lib.dontCheck (self.callPackage ./graphql-engine.nix {}));
+  graphql-engine = haskell.lib.dontHaddock (haskell.lib.dontCheck (self.callPackage ./graphql-engine.nix { inherit sources; }));
   graphql-parser = self.callPackage ./graphql-parser.nix {};
   pg-client = self.callPackage ./pg-client.nix {};
   regex-tdfa = self.callHackageDirect { pkg = "regex-tdfa"; ver = "1.3.1.0"; sha256 = "1a0l7kdjzp98smfp969mgkwrz60ph24xy0kh2dajnymnr8vd7b8g"; } {};

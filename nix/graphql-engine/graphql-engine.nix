@@ -85,17 +85,13 @@
 , x509
 , yaml
 , zlib
+, sources
 }:
 
 mkDerivation {
   pname = "graphql-engine";
   version = "1.2.1";
-  src = fetchFromGitHub {
-    owner = "hasura";
-    repo = "graphql-engine";
-    sha256 = "0hg44zl3gqa8lq7kggwgmgbsgdc7zrv5cxs507vilg11xklsbz4l";
-    rev = "27b0b59361cebecd074bd59123f602e7b013bac1";
-  };
+  src = sources.graphql-engine;
   postUnpack = "sourceRoot+=/server; echo source root reset to $sourceRoot";
   isLibrary = true;
   enableLibraryProfiling = false;

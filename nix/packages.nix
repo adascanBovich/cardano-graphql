@@ -15,7 +15,7 @@ let
     hasura-cli = self.callPackage ./hasura-cli {};
     vgo2nix = self.callPackage self.sources.vgo2nix {};
     hasuraHaskellPackages = pkgs.haskellPackages.override {
-      overrides = import ./graphql-engine/hs-overlay.nix { inherit (pkgs) haskell; };
+      overrides = import ./graphql-engine/hs-overlay.nix { inherit (pkgs) haskell; inherit (self) sources; };
     };
     graphql-engine = self.hasuraHaskellPackages.graphql-engine;
   };

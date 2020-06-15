@@ -11,6 +11,18 @@
         "url": "https://github.com/hercules-ci/gitignore/archive/f9e996052b5af4032fe6150bba4a6fe4f7b9d698.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "graphql-engine": {
+        "branch": "master",
+        "description": "Blazing fast, instant realtime GraphQL APIs on Postgres with fine grained access control, also trigger webhooks on database events.",
+        "homepage": "https://hasura.io",
+        "owner": "hasura",
+        "repo": "graphql-engine",
+        "rev": "27b0b59361cebecd074bd59123f602e7b013bac1",
+        "sha256": "0hg44zl3gqa8lq7kggwgmgbsgdc7zrv5cxs507vilg11xklsbz4l",
+        "type": "tarball",
+        "url": "https://github.com/hasura/graphql-engine/archive/27b0b59361cebecd074bd59123f602e7b013bac1.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "niv": {
         "branch": "iohk",
         "description": "Easy dependency management for Nix projects",
