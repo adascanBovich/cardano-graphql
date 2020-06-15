@@ -16,10 +16,17 @@ let
 in
 
 pkgs.lib.fix (self: {
-  inherit ( import ./. ) cardano-graphql hasura-cli persistgraphql graphql-engine;
+  inherit ( import ./. ) cardano-graphql hasura-cli cli-ext persistgraphql graphql-engine;
   build-version = pkgs.writeText "version.json" (builtins.toJSON { inherit (cardano-graphql) rev; });
   required = pkgs.releaseTools.aggregate {
     name = "required";
-    constituents = with self; [ cardano-graphql graphql-engine hasura-cli persistgraphql build-version ];
+    constituents = with self; [
+      cardano-graphql
+      graphql-engine
+      hasura-cli
+      cli-ext
+      persistgraphql
+      build-version
+    ];
   };
 })

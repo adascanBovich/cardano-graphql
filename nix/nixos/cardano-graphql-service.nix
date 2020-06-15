@@ -88,6 +88,7 @@ in {
     frontend = (import ../../.).cardano-graphql;
     persistgraphql = (import ../../.).persistgraphql;
     hasura-cli = (import ../../.).hasura-cli;
+    cli-ext = (import ../../.).cli-ext;
     hasuraBaseUri = "${cfg.hasuraProtocol}://${cfg.hasuraIp}:${toString cfg.enginePort}";
     pluginLibPath = pkgs.lib.makeLibraryPath [
       pkgs.stdenv.cc.cc.lib
