@@ -23,7 +23,6 @@ let
       pkgs.packages.cardano-graphql
       pkgs.packages.persistgraphql
       pkgs.packages.hasura-cli
-      pkgs.packages.cli-ext
       python                 # The Python Programming language
       tmux                   # Terminal multiplexer
       yarn                   # Dependency management for javascript
