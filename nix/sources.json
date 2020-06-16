@@ -13,6 +13,7 @@
     },
     "graphql-engine": {
         "branch": "master",
+        "builtin": false,
         "description": "Blazing fast, instant realtime GraphQL APIs on Postgres with fine grained access control, also trigger webhooks on database events.",
         "homepage": "https://hasura.io",
         "owner": "hasura",
@@ -21,8 +22,7 @@
         "sha256": "0xd9qisj0kqnjn0izgqly33fg0dh6p4fqfndjy3b7pgazh45svin",
         "type": "tarball",
         "url": "https://github.com/hasura/graphql-engine/archive/65920fb77bd1e96085a28b876986fea502ca9dc6.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
-        "builtin": false
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
         "branch": "iohk",
@@ -30,10 +30,10 @@
         "homepage": "https://github.com/nmattia/niv",
         "owner": "input-output-hk",
         "repo": "niv",
-        "rev": "4229fbcf62997467c34283a2f353702359e78e5a",
-        "sha256": "1y1h6aj0rxrrhvp9jpr6xw3zsa1l8ac25ng4xzjskr5kg620pxqr",
+        "rev": "89da7b2e7ae0779fd351618fc74df1b1da5e6214",
+        "sha256": "0jn88ahv6mycxdkzihy1v0dz2110q0d42q4ggyj68l2lyba6y0yy",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/niv/archive/4229fbcf62997467c34283a2f353702359e78e5a.tar.gz",
+        "url": "https://github.com/input-output-hk/niv/archive/89da7b2e7ae0779fd351618fc74df1b1da5e6214.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
