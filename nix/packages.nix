@@ -10,7 +10,7 @@ let
     inherit (self.callPackage self.sources.yarn2nix {}) yarn2nix mkYarnModules mkYarnPackage;
     inherit (import self.sources.niv {}) niv;
     cardano-graphql = self.callPackage ./cardano-graphql.nix {};
-    hasura-cli-ext = self.callPackage ./cli-ext/impure.nix {};
+    hasura-cli-ext = self.callPackage ./hasura-cli-ext/impure.nix {};
     persistgraphql = (self.callPackage ./persistgraphql {}).persistgraphql;
     hasura-cli = self.callPackage ./hasura-cli {};
     vgo2nix = self.callPackage self.sources.vgo2nix {};
