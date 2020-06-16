@@ -21,7 +21,8 @@
         "sha256": "0xd9qisj0kqnjn0izgqly33fg0dh6p4fqfndjy3b7pgazh45svin",
         "type": "tarball",
         "url": "https://github.com/hasura/graphql-engine/archive/65920fb77bd1e96085a28b876986fea502ca9dc6.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz",
+        "builtin": false
     },
     "niv": {
         "branch": "iohk",
